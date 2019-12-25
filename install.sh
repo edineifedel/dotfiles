@@ -2,8 +2,6 @@
 # author: neigroove
 # after install clone https://github.com/neigroove/dotfiles.git
 
-brew update
-
 echo "Installing binaries"
 
 echo "Installing Homebrew"
