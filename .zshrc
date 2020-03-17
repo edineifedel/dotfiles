@@ -52,6 +52,8 @@ PATH=$PATH:~/scripts
 
 # maven
 alias mvn="mvn-color" # mvn-color is a function from plugin mvn ohmyzsh
+alias mvnci="mvn -T 1C install" #override with parallel builds
+alias mvncist="mvn -T 1C install -DskipTests=true" #override with parallel builds
 # maven
 
 # git
@@ -59,13 +61,14 @@ alias mvn="mvn-color" # mvn-color is a function from plugin mvn ohmyzsh
 # alias ggpush='git push origin HEAD:refs/for/"$(git_current_branch)"' #override git push to push for gerrit
 alias gsta='git stash save'
 alias gg='gitg'
+alias ghrr='git fetch origin && git reset --hard @{u}' # git reset hard remote
 
-function ghard() {
+function ghr() {
     if [ $# -eq 0 ]; then commits=1; else commits=$1; fi
     git reset --hard HEAD~$commits
 }
 
-function gsoft() {
+function gso() {
     if [ $# -eq 0 ]; then commits=1; else commits=$1; fi
     git reset --soft HEAD~$commits
 }
